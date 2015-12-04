@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?scenebuilder-preview-i18n-resource ../bundle/base.properties?>
+<?scenebuilder-stylesheet ../css/standard.css?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800" xmlns="http://javafx.com/javafx/8.0.51" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.starterkit.javafx.controller.ViewerController">
+
+  <Label alignment="BASELINE_LEFT" layoutX="176.0" layoutY="23.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="17.0" prefWidth="240.0" styleClass="formTitle" text="%label.formTitle" />
+   <Separator layoutX="584.0" layoutY="14.0" orientation="VERTICAL" prefHeight="571.0" prefWidth="13.0" />
+   <ListView fx:id="listImagies" layoutX="621.0" layoutY="116.0" prefHeight="425.0" prefWidth="125.0" />
+   <Button fx:id="choiceFolder" defaultButton="true" layoutX="621.0" layoutY="69.0" mnemonicParsing="false" onAction="#searchButtonAction" text="%button.search" />
+   <TextField fx:id="testPath" layoutX="186.0" layoutY="57.0" prefHeight="25.0" prefWidth="342.0" />
+   <ScrollPane layoutX="39.0" layoutY="116.0" prefHeight="439.0" prefWidth="442.0">
+      <content>
+         <ImageView fx:id="testImage" pickOnBounds="true" preserveRatio="true" />
+      </content>
+   </ScrollPane>
+   <Slider fx:id="slider" blockIncrement="0.05" layoutX="528.0" layoutY="103.0" max="10.0" orientation="VERTICAL" prefHeight="470.0" prefWidth="14.0" value="5.0">
+      <rotationAxis>
+         <Point3D />
+      </rotationAxis></Slider>
+</AnchorPane>
