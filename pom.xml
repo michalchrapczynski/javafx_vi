@@ -16,6 +16,7 @@
       <scope>compile</scope>
       <version>1.2.17</version>
     </dependency>
+    <!-- REV: ta zaleznosc nie jest uzywana w projekcie -->
     <dependency>
       <groupId>javazoom</groupId>
       <artifactId>jlayer</artifactId>

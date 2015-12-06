@@ -21,6 +21,7 @@
       </content>
    </ScrollPane>
    <Slider fx:id="slider" blockIncrement="0.05" layoutX="528.0" layoutY="103.0" max="10.0" orientation="VERTICAL" prefHeight="470.0" prefWidth="14.0" value="5.0">
+      <!-- REV: ten element jest niepotrzebny -->
       <rotationAxis>
          <Point3D />
       </rotationAxis></Slider>

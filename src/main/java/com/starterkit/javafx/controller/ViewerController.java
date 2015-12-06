@@ -59,6 +59,10 @@ public class ViewerController {
 	@FXML
 	private URL location;
 
+
+	/*
+	 * REV: nie ma takiej kontrolki w FXMLu
+	 */
 	/**
 	 * JavaFX injects an object defined in FXML with the same "fx:id" as the
 	 * variable name.
@@ -66,6 +70,9 @@ public class ViewerController {
 	@FXML
 	private TextField nameField;
 
+	/*
+	 * REV: nie ma takiej kontrolki w FXMLu
+	 */
 	@FXML
 	private Button searchButton;
 
@@ -86,11 +93,17 @@ public class ViewerController {
 
 	}
 
+	/*
+	 * REV: nazwa metody nie odpowiada temu co metoda robi
+	 */
 	@FXML
 	private void searchButtonAction(ActionEvent event) {
 
 		DirectoryChooser dir = new DirectoryChooser();
 
+		/*
+		 * REV: dialog wyboru pliku powinien byc dialogiem modalnym
+		 */
 		File selectedFile = dir.showDialog(null);
 
 		if (selectedFile != null) {
@@ -109,6 +122,9 @@ public class ViewerController {
 
 			@Override
 			public boolean accept(File dir, String name) {
+				/*
+				 * REV: a co z .png, .bmp i itp.?
+				 */
 				return name.toLowerCase().endsWith(".jpg");
 			}
 		};
@@ -140,12 +156,18 @@ public class ViewerController {
 						}
 						String nameFile = item.getName();
 						setText(nameFile);
+						/*
+						 * REV: lepiej uzyc item.toURI()
+						 */
 						String pathImage = "file:" + item.getAbsolutePath();
 						Image img = new Image(pathImage);
 						Image img2 = new Image(pathImage, 20, 20, true, true);
 						testImage.setImage(img);
 						Label label = new Label();
 						ImageView iv = new ImageView(img2);
+						/*
+						 * REV: lepiej uzyc setGraphic() dla obrazka i setText() dla tekstu
+						 */
 						HBox bar = new HBox(iv, label);
 						bar.setAlignment(Pos.CENTER_LEFT);
 						setGraphic(bar);
@@ -159,6 +181,9 @@ public class ViewerController {
 
 			@Override
 			public void changed(ObservableValue<? extends File> observable, File oldValue, File newValue) {
+				/*
+				 * REV: j.w.
+				 */
 				String pathImage = "file:" + newValue.getAbsolutePath();
 				Image img = new Image(pathImage);
 				testImage.setImage(img);
